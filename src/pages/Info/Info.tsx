@@ -1,13 +1,6 @@
-import VerticalCarousel from "../../components/ui/carousel/VerticalCarousel"
 import LineChart from "../../components/ui/chart/LineChart"
 import HistoryTable from "./components/historyTable/HistoryTable"
 import RankingTable from "./components/rankingTable/RankingTable"
-
-type CarouselItem = {
-  img:string,
-  to:string,
-  text:string
-}
 
 export default function Info() {
   return (

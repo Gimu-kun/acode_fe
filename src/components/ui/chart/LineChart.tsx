@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Chart, { Colors, plugins } from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 import { getRelativePosition } from 'chart.js/helpers';
 
 export default function LineChart() {

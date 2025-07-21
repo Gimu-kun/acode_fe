@@ -1,12 +1,9 @@
-import { Space, Table, Tag, Tooltip, type TableColumnsType } from 'antd';
-import Column from 'antd/es/table/Column';
-import ColumnGroup from 'antd/es/table/ColumnGroup';
+import { Table, Tooltip } from 'antd';
 import React from 'react'
-import { data } from 'react-router-dom';
 
 
 export default function RankingTable() {
-    const { Column, ColumnGroup } = Table;
+    const { Column } = Table;
 
     interface DataType {
         key: React.Key;

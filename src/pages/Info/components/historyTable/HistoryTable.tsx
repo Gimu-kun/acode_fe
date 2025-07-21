@@ -1,12 +1,9 @@
-import { Space, Table, Tag, Tooltip, type TableColumnsType } from 'antd';
-import Column from 'antd/es/table/Column';
-import ColumnGroup from 'antd/es/table/ColumnGroup';
+import { Space, Table, Tooltip} from 'antd';
 import React from 'react'
-import { data } from 'react-router-dom';
 
 
 export default function HistoryTable() {
-    const { Column, ColumnGroup } = Table;
+    const { Column } = Table;
 
     interface DataType {
         key: React.Key;
@@ -108,7 +105,7 @@ export default function HistoryTable() {
                 ellipsis
                 title="Action"
                 key="action"
-                render={(_: any, record: DataType) => (
+                render={(_: any) => (
                     <Space size="middle">
                         <a>Chi tiết</a>
                     </Space>
