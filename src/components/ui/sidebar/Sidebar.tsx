@@ -32,7 +32,19 @@ export default function Sidebar() {
             </div>
             <ul className='flex flex-col w-full gap-y-5'>
                 <li className='w-full'>
-                    <SideBarBtn to='/dashboard'>Thông tin</SideBarBtn>
+                    <SideBarBtn to='/info'>Thông tin</SideBarBtn>
+                </li>
+                <li>
+                    <SideBarBtn to='/questions-mng'>Quản lý câu hỏi</SideBarBtn>
+                </li>
+                <li>
+                    <SideBarBtn to='/roadmaps-mng'>Quản lý lộ trình</SideBarBtn>
+                </li>
+                <li>
+                    <SideBarBtn to='/matrix-mng'>Quản lý ma trận</SideBarBtn>
+                </li>
+                <li>
+                    <SideBarBtn to='/test-mng'>Quản lý đề thi</SideBarBtn>
                 </li>
                 <li>
                     <SideBarBtn to='/roadmap'>Lộ trình</SideBarBtn>
