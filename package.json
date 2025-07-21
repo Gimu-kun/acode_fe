@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/vite": "^4.1.11",
     "antd": "^5.26.6",
+    "antd-img-crop": "^4.25.0",
+    "better-react-mathjax": "^2.3.0",
     "chart.js": "^4.5.0",
     "embla-carousel-react": "^8.6.0",
     "react": "^19.1.0",
