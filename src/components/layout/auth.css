@@ -1,0 +1,114 @@
+.bg-circle{
+    animation: bg-circle-ping 2s ease-in-out infinite, bg-circle-trans 2s forwards;
+}
+
+.bg-circle-line{
+    animation: bg-circle-ping 2s .5s ease-in-out infinite, bg-circle-trans 2s forwards;
+    stroke-width: .05;
+}
+
+.bg-circle-md{
+    animation: bg-circle-trans-md 2s forwards , circle-shake 3s .5s infinite;
+}
+
+.bg-circle-sm{
+    animation: bg-circle-trans-sm 2s forwards , circle-shake 3s infinite;
+}
+
+.signup-btn{
+    animation: signup-btn-ping 1s ease-in-out forwards;
+}
+
+.not-member{
+    display: inline-block;
+    transform: translateY(100%);
+    animation: not-member-show 1s ease-in-out forwards;
+}
+
+.auth-field{
+    animation: auth-field-show .5s ease-in-out forwards;
+}
+
+@keyframes bg-circle-trans {
+    from{
+        top: -100%;
+        left: -100%;
+    }
+    to{
+        top: -40%;
+        left: -15%;
+    }
+}
+
+@keyframes bg-circle-trans-md {
+    from{
+        top: -100%;
+        left: 50%;
+    }
+    to{
+        top: 15%;
+        left: 35%;
+    }
+}
+
+@keyframes circle-shake {
+    0%{
+        transform: translate(-5%,5%);
+    }
+    50%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-5%,5%);
+    }
+}
+
+@keyframes bg-circle-trans-sm {
+    from{
+        top: -100%;
+        left: 40%;
+    }
+    to{
+        top: 10%;
+        left: 30%;
+    }
+}
+
+@keyframes bg-circle-ping {
+    0%{
+        transform: scale(1.01);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.01);
+    }
+}
+
+@keyframes signup-btn-ping {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+
+@keyframes not-member-show {
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes auth-field-show {
+    from{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
