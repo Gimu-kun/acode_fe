@@ -112,3 +112,20 @@
         opacity: 1;
     }
 }
+
+
+/* Fix để Modal không bị che */
+.ant-modal-root {
+    z-index: 2000 !important;
+    position: relative !important;
+  }
+  
+  .ant-modal-mask {
+    z-index: 1999 !important;
+  }
+  
+  /* Nếu có phần tử nào full màn hình che mất modal */
+  body > div {
+    position: relative;
+    z-index: auto;
+  }

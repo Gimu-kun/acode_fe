@@ -1,10 +1,11 @@
 import { EyeInvisibleOutlined, EyeTwoTone, InfoCircleOutlined, KeyOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, DatePicker, Form, Input, Radio, Space } from "antd";
+import { Button, DatePicker, Form, Input, Modal, Radio, Space } from "antd";
 import dayjs, { Dayjs } from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import '../../components/layout/auth.css'
-import axios  from "axios";
+import axios, { AxiosError }  from "axios";
 import type { userCreateType } from "../../types/user";
+import { useNavigate } from "react-router-dom";
 
 type signUpFormType ={
     confirm_password:string;
@@ -16,6 +17,9 @@ type signUpFormType ={
 }
 
 export default function Signup() {
+    const navigate = useNavigate();
+
+    const [modal, contextHolder] = Modal.useModal();
 
     dayjs.extend(customParseFormat);
     const dateFormat = 'YYYY-MM-DD';
@@ -39,24 +43,34 @@ export default function Signup() {
             achievement:"newbie"
         }
 
-        console.log(user);
         
         
         try {
             const res = await axios.post("http://localhost:8080/api/user", user, {
               headers: { "Content-Type": "application/json" }
             });
-        
-            console.log("Status:", res.status);
-            console.log("Data:", res.data);
+            if(res.status == 200 || res.status == 201){
+                modal.success({
+                    title: "Đăng ký thành công",
+                    content: "Tài khoản đã được tạo. Bạn có thể đăng nhập ngay bây giờ.",
+                    zIndex: 9000,
+                    onOk:()=>{navigate("/login")}
+                });
+            }
           } catch (error) {
-            console.error("Lỗi khi gửi request:", error);
+            const err = error as AxiosError
+            modal.warning({
+                title: "Đăng ký không thành công",
+                content: err.response?.data as string,
+                zIndex: 9000,
+            });
           }
                   
     };
 
   return (
     <Form form={form} onFinish={handleForm} className='auth-field flex flex-col p-15 w-2/3 bg-white'>
+        {contextHolder}
         <div className="mb-5">
             <h3 className="text-3xl">Đăng ký</h3>
             <span className="text-gray-500 text-sm">Điền thông tin bên dưới</span>
