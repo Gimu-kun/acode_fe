@@ -1,7 +1,7 @@
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import './auth.css'
 import Logo from '../../assets/Logo-text.png'
-import { Button, Form } from 'antd'
+import { Button } from 'antd'
 
 export default function AuthLayout() {
     const location = useLocation().pathname;

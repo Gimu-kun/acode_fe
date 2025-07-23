@@ -1,5 +1,5 @@
 import { EyeInvisibleOutlined, EyeTwoTone, InfoCircleOutlined, KeyOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, DatePicker, Form, Input, Modal, Radio, Space } from "antd";
+import { Button, DatePicker, Form, Input, Radio, Space } from "antd";
 import dayjs, { Dayjs } from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import '../../components/layout/auth.css'
