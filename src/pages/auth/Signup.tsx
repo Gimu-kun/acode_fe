@@ -46,17 +46,15 @@ export default function Signup() {
         
         
         try {
-            const res = await axios.post("http://localhost:8080/api/user", user, {
+            await axios.post("http://localhost:8080/api/user", user, {
               headers: { "Content-Type": "application/json" }
             });
-            if(res.status == 200 || res.status == 201){
-                modal.success({
-                    title: "Đăng ký thành công",
-                    content: "Tài khoản đã được tạo. Bạn có thể đăng nhập ngay bây giờ.",
-                    zIndex: 9000,
-                    onOk:()=>{navigate("/login")}
-                });
-            }
+            modal.success({
+                title: "Đăng ký thành công",
+                content: "Tài khoản đã được tạo. Bạn có thể đăng nhập ngay bây giờ.",
+                zIndex: 9000,
+                onOk:()=>{navigate("/login")}
+            });
           } catch (error) {
             const err = error as AxiosError
             modal.warning({
