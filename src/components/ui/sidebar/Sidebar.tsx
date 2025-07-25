@@ -58,7 +58,7 @@ export default function Sidebar() {
             </ul>
         </div>
         <div>
-            {/*adsadadasádadsdsds*/}<SideBarBtn to='/logout'>Đăng xuất</SideBarBtn>
+            <SideBarBtn to='/logout'>Đăng xuất</SideBarBtn>
         </div>
     </div>
   )
